@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import zguru.springframework.zdependencyinjection.controllers.MyController;
+import zguru.springframework.zdependencyinjection.controllers.PropertyInjectedController;
 
 @SpringBootApplication
 public class ZDependencyInjectionApplication {
@@ -18,6 +19,11 @@ public class ZDependencyInjectionApplication {
 		String greeting = myController.sayHello();
 
 		System.out.println(greeting);
+
+		System.out.println("---------------Property");
+
+		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
+		System.out.println(propertyInjectedController.getGreeting());
 	}
 
 }
