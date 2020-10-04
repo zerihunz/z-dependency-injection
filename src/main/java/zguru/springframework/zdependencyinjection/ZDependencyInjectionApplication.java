@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import zguru.springframework.zdependencyinjection.controllers.MyController;
 import zguru.springframework.zdependencyinjection.controllers.PropertyInjectedController;
+import zguru.springframework.zdependencyinjection.controllers.SetterInjectedController;
 
 @SpringBootApplication
 public class ZDependencyInjectionApplication {
@@ -24,6 +25,11 @@ public class ZDependencyInjectionApplication {
 
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
 		System.out.println(propertyInjectedController.getGreeting());
+
+		System.out.println("---------------Setter");
+
+		SetterInjectedController setterInjectedController = (SetterInjectedController) ctx.getBean("setterInjectedController");
+		System.out.println(setterInjectedController.getGreeting());
 	}
 
 }
