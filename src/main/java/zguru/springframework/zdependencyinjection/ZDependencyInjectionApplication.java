@@ -18,9 +18,9 @@ public class ZDependencyInjectionApplication {
 		//The is the principle of inversion of control, the framework is doing the work of managing the creation of
 		//Objects
 		MyController myController = (MyController) ctx.getBean("myController");
-		String greeting = myController.sayHello();
 
-		System.out.println(greeting);
+		System.out.println("--------------- Primary Bean");
+		System.out.println(myController.sayHello());
 
 		System.out.println("---------------Property");
 
